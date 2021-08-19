@@ -1,0 +1,1 @@
+sourcetype=queries* NOT (dns_query=”*.google.com” OR dns_query=”*akamaized.net”) | `ut_parse(dns_query)` | `ut_shannon(ut_subdomain)` | where ut_shannon > 3.4 | stats count by dns_query ut_shannon
