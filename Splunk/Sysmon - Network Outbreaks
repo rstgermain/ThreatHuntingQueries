@@ -1,0 +1,1 @@
+sourcetype=”XmlWinEventLog:Microsoft-Windows-Sysmon/Operational” | stats values(DestinationHostname) as DestinationHostname by Computer | where mvcount(DestinationHostname) > 4
