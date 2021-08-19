@@ -1,1 +1,3 @@
+# Baseline your environment and modify as needed. EX: If HR doesnt connect to more than 2 systems.
+
 sourcetype=”XmlWinEventLog:Microsoft-Windows-Sysmon/Operational” | stats values(DestinationHostname) as DestinationHostname by Computer | where mvcount(DestinationHostname) > 4
